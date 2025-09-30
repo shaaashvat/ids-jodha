@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IDS-JODHA: A Multimodal Dataset for Indian Traffic</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    body { font-family: 'Segoe UI', 'Roboto', sans-serif; }
+    header {
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: white;
+      text-align: center;
+      padding: 120px 20px;
+    }
+    header h1 { font-size: 3.5rem; font-weight: 700; }
+    .section-title { margin-bottom: 50px; text-align: center; font-weight: 600; color: #333; }
+    .feature-list li { margin-bottom: 10px; }
+    .app-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: none;
+      border-radius: 10px;
+    }
+    .app-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    .citation-box {
+        background-color: #f8f9fa;
+        border-left: 4px solid #0d6efd;
+        padding: 20px;
+        font-family: 'Courier New', Courier, monospace;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        border-radius: 5px;
+    }
+    footer { background: #111; color: #ccc; padding: 30px 20px; text-align: center; }
+  </style>
+</head>
+<body>
+
+<header data-aos="fade-in">
+  <div class="container">
+    <h1>IDS-JODHA</h1>
+    <p class="lead fs-4">A Real-World Multimodal Dataset for Studying Chaotic Traffic Dynamics in Urban India</p>
+    <div class="mt-4">
+        <a href="#access" class="btn btn-primary btn-lg mx-2">Request Access</a>
+        <a href="YOUR_PAPER_LINK.pdf" class="btn btn-light btn-lg mx-2">View Paper</a>
+        <a href="https://sites.google.com/iitj.ac.in/tstmlab/home" class="btn btn-outline-light btn-lg mx-2">Explore TSTM Lab</a>
+    </div>
+  </div>
+</header>
+
+<section id="overview" class="container my-5 py-5">
+  <h2 class="section-title" data-aos="fade-up">Dataset Overview</h2>
+  <div class="row align-items-center">
+    <div class="col-lg-6" data-aos="fade-right">
+      <p class="fs-5">The <strong>IDS-JODHA</strong> dataset is an observational tool for studying complex systems and a challenging benchmark for perception algorithms. Collected on live urban roads in Jodhpur, India, it captures the dense, unstructured, and heterogeneous traffic dynamics that are underrepresented in existing datasets.</p>
+      <h4 class="mt-4">Key Features:</h4>
+      <ul class="list-unstyled feature-list fs-5">
+        <li>✔️ <strong>Unstructured Scenarios:</strong> High agent density, no lane discipline, diverse vehicle classes.</li>
+        <li>✔️ <strong>Multi-Weather Conditions:</strong> Includes both clear weather and a supplementary rainy sequence.</li>
+        <li>✔️ <strong>Synchronized Multimodality:</strong> Time-aligned 3D LiDAR scans and high-resolution camera frames.</li>
+        <li>✔️ <strong>Scalable Methodology:</strong> Collected with a low-cost, portable sensor suite.</li>
+      </ul>
+    </div>
+    <div class="col-lg-6" data-aos="fade-left">
+      <img src="assets/sample_scene.jpg" class="img-fluid rounded shadow-lg" alt="Sample Scene from Jodhpur Traffic">
+    </div>
+  </div>
+  <div class="row text-center mt-5 pt-3">
+      <div class="col-md-4" data-aos="zoom-in">
+          <h3>~59 Mins</h3>
+          <p class="text-muted">Total Duration</p>
+      </div>
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+          <h3>~88,700</h3>
+          <p class="text-muted">Total Camera Frames (4K @ 25 FPS)</p>
+      </div>
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+          <h3>~16,800</h3>
+          <p class="text-muted">LiDAR Scans (VLP-16 @ 10 Hz)</p>
+      </div>
+  </div>
+</section>
+
+<section id="applications" class="bg-light py-5">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-up">Research Applications</h2>
+    <div class="row">
+      <div class="col-lg-4 d-flex align-items-stretch mb-4" data-aos="fade-up">
+        <div class="card app-card text-center p-3">
+          <div class="card-body">
+            <h5 class="card-title">Robust Perception</h5>
+            <p class="card-text">Benchmark 3D object detection, tracking, and segmentation models in dense, occluded scenarios and adverse weather conditions that challenge state-of-the-art systems.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 d-flex align-items-stretch mb-4" data-aos="fade-up" data-aos-delay="150">
+        <div class="card app-card text-center p-3">
+          <div class="card-body">
+            <h5 class="card-title">Behavioral Modeling</h5>
+            <p class="card-text">Develop and validate a new generation of behaviorally accurate trajectory prediction models for vulnerable road users and vehicles in mixed, non-lane-based traffic.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 d-flex align-items-stretch mb-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="card app-card text-center p-3">
+          <div class="card-body">
+            <h5 class="card-title">Complex Systems Science</h5>
+            <p class="card-text">Use dense agent trajectories to empirically test theories of traffic flow, self-organization, and criticality in a real-world, chaotic system.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="data-structure" class="container my-5 py-5">
+    <h2 class="section-title" data-aos="fade-up">Data Structure</h2>
+    <p class="text-center lead" data-aos="fade-up" data-aos-delay="100">The dataset is organized into two main sequences with a clear and modular directory structure.</p>
+    <div class="d-flex justify-content-center" data-aos="zoom-in" data-aos-delay="200">
+        <pre class="citation-box bg-dark text-white"><code>
+IDS-JODHA/
+├── clear_weather_multimodal/
+│   ├── raw/
+│   │   ├── video.mp4
+│   │   └── lidar.bag
+│   ├── processed/
+│   │   ├── images/ (42,756 frames)
+│   │   └── pcds/   (16,820 scans)
+│   └── synced/
+│       └── (16,803 image-LiDAR pairs)
+├── rainy_weather_monocular/
+│   ├── raw/
+│   │   └── video.mp4
+│   └── processed/
+│       └── images/ (45,996 frames)
+└── metadata/
+    ├── camera_calibration.yaml
+    └── sync_config.json
+        </code></pre>
+    </div>
+</section>
+
+
+<section id="access" class="bg-light py-5">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-up">Access & Citation</h2>
+    <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+        <p class="lead">The IDS-JODHA dataset is available for academic and research purposes. To get access, please fill out the request form. Upon approval, you will receive a download link.</p>
+        <a href="https://forms.gle/YOUR_FORM_ID" target="_blank" class="btn btn-primary btn-lg mt-3" data-aos="zoom-in">Request Access Form</a>
+    </div>
+
+    <div class="mt-5 pt-4" data-aos="fade-up" data-aos-delay="200">
+      <h4 class="text-center mb-3">Please cite our work if you use this dataset:</h4>
+      <div class="citation-box">
+        @article{Pal2025idsjodha, <br>
+        &nbsp;&nbsp;title={IDS-JODHA: A Multimodal Dataset for Studying Complex Traffic Dynamics},<br>
+        &nbsp;&nbsp;author={Pal, S. and Tripathi, S. and Mohan, R.},<br>
+        &nbsp;&nbsp;journal={Scientific Data},<br>
+        &nbsp;&nbsp;year={2025},<br>
+        &nbsp;&nbsp;publisher={Nature Publishing Group}<br>
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="team" class="container my-5 py-5">
+    <h2 class="section-title" data-aos="fade-up">Team</h2>
+    <div class="row text-center">
+        <div class="col-md-4" data-aos="fade-up">
+            <h5>S. Pal</h5>
+            <p class="text-muted">Data Curation, Software</p>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="150">
+            <h5>S. Tripathi</h5>
+            <p class="text-muted">Conceptualization, Formal Analysis</p>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+            <h5>R. Mohan</h5>
+            <p class="text-muted">Supervision, Review</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 | Transportation Systems and Traffic Modelling Lab, Indian Institute of Technology Jodhpur</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 800, once: true });
+</script>
+</body>
+</html>
