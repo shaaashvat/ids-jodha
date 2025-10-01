@@ -142,6 +142,46 @@
   </div>
 </section>
 
+<section id="motivation" class="container my-5 py-5">
+  <h2 class="section-title" data-aos="fade-up">Motivation & Scientific Context</h2>
+  <div class="row align-items-center">
+    <div class="col-lg-6" data-aos="fade-right">
+      <h4 class="mb-3">A Natural Laboratory</h4>
+      <p>Understanding the principles of self-organization in complex systems is a fundamental scientific challenge. Urban traffic in unstructured environments, such as those in India, represents a remarkable, yet understudied, real-world instance of such a system. It provides a natural laboratory for investigating how macroscopic order emerges from the chaotic, local interactions of numerous independent agents[cite: 25].</p>
+      <p>Unlike regulated environments, Indian roads exhibit chaotic patterns with a high diversity of agents and a general lack of lane discipline, making them a significant test for modern perception systems.</p>
+    </div>
+  </div>
+</section>
+
+<section id="collection" class="bg-light py-5">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-up">Data Collection & Hardware</h2>
+    <div class="row mb-5">
+      <div class="col-md-6" data-aos="fade-up">
+        <h4 class="mb-3">Sensor Specifications</h4>
+        <ul class="list-group">
+          [cite_start]<li class="list-group-item"><strong>Camera:</strong> Sony ILCE-6400 mirrorless camera recording at 3840×2160 (4K) resolution at 25 FPS[cite: 197].</li>
+          [cite_start]<li class="list-group-item"><strong>LiDAR:</strong> Velodyne Puck (VLP-16), a 16-channel 3D LiDAR sensor with a 360° field of view and an effective range of up to 100 meters, operating at 10 Hz[cite: 226].</li>
+        </ul>
+      </div>
+      <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <h4 class="mb-3">Hardware Setup</h4>
+        <p>The sensor suite was mounted on a passenger vehicle. [cite_start]The camera was attached to the dashboard using a DJI Ronin-SC gimbal for active stabilization, while the LiDAR was positioned on the roof for an unobstructed view[cite: 233, 235]. [cite_start]Data was logged using a high-performance laptop powered by a dual UPS configuration[cite: 238, 241].</p>
+      </div>
+    </div>
+    <div class="row text-center">
+      <div class="col-lg-6 mb-4" data-aos="zoom-in">
+        <img src="assets/sensor_rig.png" class="preview-visual" alt="Sensor Rig Diagram">
+        [cite_start]<p class="text-muted mt-2">Sensor mounting and coordinate frames[cite: 273].</p>
+      </div>
+      <div class="col-lg-6 mb-4" data-aos="zoom-in" data-aos-delay="150">
+        <img src="assets/route_map.png" class="preview-visual" alt="Data Collection Route Map">
+        [cite_start]<p class="text-muted mt-2">Data collection route for the clear-weather sequence through Jodhpur[cite: 300].</p>
+      </div>
+    </div>
+  </div>
+</section>
+  
 <section id="applications" class="container py-5">
   <div class="container">
     <h2 class="section-title" data-aos="fade-up">Research Applications</h2>
@@ -153,6 +193,41 @@
   </div>
 </section>
 
+<section id="processing" class="container my-5 py-5">
+  <h2 class="section-title" data-aos="fade-up">Data Processing Pipeline</h2>
+  <div class="row align-items-center">
+    <div class="col-lg-7" data-aos="fade-right">
+      <img src="assets/processing_flowchart.png" class="preview-visual" alt="Data Processing Flowchart">
+    </div>
+    <div class="col-lg-5" data-aos="fade-left">
+      [cite_start]<p>Raw sensor recordings were transformed into a structured, analysis-ready format through a systematic preprocessing pipeline designed to ensure data integrity, temporal consistency, and calibration accuracy[cite: 336].</p>
+      <ul>
+        [cite_start]<li>Raw 4K video is decomposed into individual frames[cite: 355].</li>
+        [cite_start]<li>LiDAR data from ROS2 bags is parsed into `.pcd` point cloud files[cite: 356, 357].</li>
+        [cite_start]<li>Camera intrinsic parameters are estimated using COLMAP[cite: 369].</li>
+        [cite_start]<li>A software-based approach using manually identified start-times is used to create temporally synchronized image-LiDAR pairs[cite: 380, 381, 382].</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="analysis" class="bg-light py-5">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-up">Preliminary Analysis & Findings</h2>
+    <div class="row align-items-center">
+      <div class="col-lg-6" data-aos="fade-right">
+        <h4 class="mb-3">Behavioral Shift in Adverse Weather</h4>
+        [cite_start]<p>To demonstrate the dataset's utility, a baseline vehicle detection and counting pipeline was implemented[cite: 163]. [cite_start]The analysis reveals a significant variance in traffic composition based on weather conditions[cite: 187].</p>
+        [cite_start]<p>During rainy conditions, a dramatic behavioral shift occurs: the volume of **Two-wheelers**, which are the dominant vehicle class in clear weather, **decreases by approximately 85%**[cite: 15, 188]. [cite_start]Consequently, Four-wheelers become an equally dominant traffic component, highlighting a critical adaptation strategy by commuters[cite: 189].</p>
+      </div>
+      <div class="col-lg-6" data-aos="fade-left">
+        <img src="assets/analysis_chart.png" class="preview-visual" alt="Bar chart showing traffic composition">
+        [cite_start]<p class="text-muted mt-2">Comparative analysis of traffic composition[cite: 211].</p>
+      </div>
+    </div>
+  </div>
+</section>
+  
 <section id="data-structure" class="bg-light py-5">
     <div class="container">
       <h2 class="section-title" data-aos="fade-up">Data Structure</h2>
@@ -166,7 +241,6 @@ IDS-JODHA/
 │   │   └── lidar.bag
 │   ├── processed/
 │   │   ├── images/ (42,756 frames)
-│   │   └── pcds/   (16,820 scans)
 │   └── synced/
 │       └── (16,803 image-LiDAR pairs)
 ├── rainy_weather_monocular/
