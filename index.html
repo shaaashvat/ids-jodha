@@ -176,7 +176,7 @@
       </div>
       <div class="col-lg-6 mb-4" data-aos="zoom-in" data-aos-delay="150">
         <img src="assets/route_map.png" class="preview-visual" alt="Data Collection Route Map">
-        [cite_start]<p class="text-muted mt-2">Data collection route for the clear-weather sequence through Jodhpur[cite: 300].</p>
+        <p class="text-muted mt-2">Data collection route for the clear-weather sequence through Jodhpur.</p>
       </div>
     </div>
   </div>
@@ -200,12 +200,12 @@
       <img src="assets/processing_flowchart.png" class="preview-visual" alt="Data Processing Flowchart">
     </div>
     <div class="col-lg-5" data-aos="fade-left">
-      [cite_start]<p>Raw sensor recordings were transformed into a structured, analysis-ready format through a systematic preprocessing pipeline designed to ensure data integrity, temporal consistency, and calibration accuracy[cite: 336].</p>
+      <p>Raw sensor recordings were transformed into a structured, analysis-ready format through a systematic preprocessing pipeline designed to ensure data integrity, temporal consistency, and calibration accuracy.</p>
       <ul>
-        [cite_start]<li>Raw 4K video is decomposed into individual frames[cite: 355].</li>
-        [cite_start]<li>LiDAR data from ROS2 bags is parsed into `.pcd` point cloud files[cite: 356, 357].</li>
-        [cite_start]<li>Camera intrinsic parameters are estimated using COLMAP[cite: 369].</li>
-        [cite_start]<li>A software-based approach using manually identified start-times is used to create temporally synchronized image-LiDAR pairs[cite: 380, 381, 382].</li>
+        <li>Raw 4K video is decomposed into individual frames.</li>
+        <li>LiDAR data from ROS2 bags is parsed into `.pcd` point cloud files.</li>
+        <li>Camera intrinsic parameters are estimated using COLMAP.</li>
+        <li>A software-based approach using manually identified start-times is used to create temporally synchronized image-LiDAR pairs.</li>
       </ul>
     </div>
   </div>
@@ -217,12 +217,12 @@
     <div class="row align-items-center">
       <div class="col-lg-6" data-aos="fade-right">
         <h4 class="mb-3">Behavioral Shift in Adverse Weather</h4>
-        [cite_start]<p>To demonstrate the dataset's utility, a baseline vehicle detection and counting pipeline was implemented[cite: 163]. [cite_start]The analysis reveals a significant variance in traffic composition based on weather conditions[cite: 187].</p>
-        [cite_start]<p>During rainy conditions, a dramatic behavioral shift occurs: the volume of **Two-wheelers**, which are the dominant vehicle class in clear weather, **decreases by approximately 85%**[cite: 15, 188]. [cite_start]Consequently, Four-wheelers become an equally dominant traffic component, highlighting a critical adaptation strategy by commuters[cite: 189].</p>
+        <p>To demonstrate the dataset's utility, a baseline vehicle detection and counting pipeline was implemented. The analysis reveals a significant variance in traffic composition based on weather conditions.</p>
+        <p>During rainy conditions, a dramatic behavioral shift occurs: the volume of Two-wheelers, which are the dominant vehicle class in clear weather, decreases by approximately 85%. Consequently, Four-wheelers become an equally dominant traffic component, highlighting a critical adaptation strategy by commuters.</p>
       </div>
       <div class="col-lg-6" data-aos="fade-left">
         <img src="assets/analysis_chart.png" class="preview-visual" alt="Bar chart showing traffic composition">
-        [cite_start]<p class="text-muted mt-2">Comparative analysis of traffic composition[cite: 211].</p>
+        <p class="text-muted mt-2">Comparative analysis of traffic composition.</p>
       </div>
     </div>
   </div>
@@ -231,23 +231,21 @@
 <section id="data-structure" class="bg-light py-5">
     <div class="container">
       <h2 class="section-title" data-aos="fade-up">Data Structure</h2>
-      <p class="text-center lead" data-aos="fade-up" data-aos-delay="100">The dataset is organized into two main sequences with a clear and modular directory structure.</p>
+      <p class="text-center lead" data-aos="fade-up" data-aos-delay="100">The dataset is organized into the following modular directory structure.</p>
       <div class="d-flex justify-content-center" data-aos="zoom-in" data-aos-delay="200">
           <pre class="citation-box bg-dark text-white"><code>
 IDS-JODHA/
-├── clear_weather_multimodal/
-│   ├── raw/
-│   │   ├── video.mp4
-│   │   └── lidar.bag
-│   ├── processed/
-│   │   ├── images/ (42,756 frames)
-│   └── synced/
-│       └── (16,803 image-LiDAR pairs)
-├── rainy_weather_monocular/
-│   ├── raw/
-│   │   └── video.mp4
-│   └── processed/
-│       └── images/ (45,996 frames)
+├── Monocular Rain Data/
+│   └── video_frames/
+├── Multi-Modal Dataset/
+│   ├── lidar_rosbag/
+│   ├── synced_frames/
+│   └── video_frames/
+├── codes/
+│   ├── frame_extract.ipynb
+│   ├── generated_synced_dataset.py
+│   ├── manual_sync_viewer.py
+│   └── points2pcd.py
 └── metadata/
     ├── camera_calibration.yaml
     └── sync_config.json
@@ -266,12 +264,12 @@ IDS-JODHA/
     <div class="mt-5 pt-4" data-aos="fade-up" data-aos-delay="200">
       <h4 class="text-center mb-3">Please cite our work if you use this dataset:</h4>
       <div class="citation-box">
-        @article{Pal2025idsjodha, <br>
-        &nbsp;&nbsp;title={IDS-JODHA: A Multimodal Dataset for Studying Complex Traffic Dynamics},<br>
-        &nbsp;&nbsp;author={Pal, S. and Tripathi, S. and Mohan, R.},<br>
-        &nbsp;&nbsp;journal={Scientific Data},<br>
+        @article{IDSJODHA, <br>
+        &nbsp;&nbsp;title={A Multimodal and Multi-Weather Traffic Dataset for Analyzing Agent Dynamics in Unstructured Environments},<br>
+        &nbsp;&nbsp;author={Pal, S.; Tripathi, S. and Mohan, R.},<br>
+        &nbsp;&nbsp;journal={TBD},<br>
         &nbsp;&nbsp;year={2025},<br>
-        &nbsp;&nbsp;publisher={Nature Publishing Group}<br>
+        &nbsp;&nbsp;publisher={TBD}<br>
         }
       </div>
     </div>
@@ -282,26 +280,21 @@ IDS-JODHA/
     <div class="container">
       <h2 class="section-title" data-aos="fade-up">Team</h2>
       <div class="row text-center">
-          
-          <div class="col-md-4" data-aos="fade-up">
-              <a href="#" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-dark">
-                <h5>S. Pal</h5>
-              </a>
-              <p class="text-muted">Data Curation, Software</p>
-          </div>
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+              <a href="https://www.linkedin.com/in/ranju-mohan-11845359/" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-dark">
+                <h5>R. Mohan</h5>
+
+          </div>          
+
           
           <div class="col-md-4" data-aos="fade-up" data-aos-delay="150">
-              <a href="#" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-dark">
+              <a href="https://www.linkedin.com/in/shaaashvat/" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-dark">
                 <h5>S. Tripathi</h5>
-              </a>
-              <p class="text-muted">Conceptualization, Formal Analysis</p>
-          </div>
 
-          <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-              <a href="#" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-dark">
-                <h5>R. Mohan</h5>
-              </a>
-              <p class="text-muted">Supervision, Review</p>
+          </div>
+          <div class="col-md-4" data-aos="fade-up">
+              <a href="https://www.linkedin.com/in/sreejib-pal-792546204/" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-dark">
+                <h5>S. Pal</h5>
           </div>
 
       </div>
