@@ -35,6 +35,12 @@
         word-wrap: break-word;
         border-radius: 5px;
     }
+    .preview-visual {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      width: 100%;
+    }
     footer { background: #111; color: #ccc; padding: 30px 20px; text-align: center; }
   </style>
 </head>
@@ -55,7 +61,7 @@
 <section id="overview" class="container my-5 py-5">
   <h2 class="section-title" data-aos="fade-up">Dataset Overview</h2>
   <div class="row align-items-center">
-    <div class="col-lg-6" data-aos="fade-right">
+    <div class="col-lg-7" data-aos="fade-right">
       <p class="fs-5">The <strong>IDS-JODHA</strong> dataset is an observational tool for studying complex systems and a challenging benchmark for perception algorithms. Collected on live urban roads in Jodhpur, India, it captures the dense, unstructured, and heterogeneous traffic dynamics that are underrepresented in existing datasets.</p>
       <h4 class="mt-4">Key Features:</h4>
       <ul class="list-unstyled feature-list fs-5">
@@ -65,11 +71,12 @@
         <li>✔️ <strong>Scalable Methodology:</strong> Collected with a low-cost, portable sensor suite.</li>
       </ul>
     </div>
-    <div class="col-lg-6" data-aos="fade-left">
-      <img src="assets/sample_scene.jpg" class="img-fluid rounded shadow-lg" alt="Sample Scene from Jodhpur Traffic">
+    <div class="col-lg-5 text-center" data-aos="fade-left">
+      <img src="assets/lidar_topdown_visualization.png" class="preview-visual" alt="Top-down LiDAR Visualization">
+      <p class="text-muted mt-2">Height-colored top-down LiDAR scan</p>
     </div>
   </div>
-  <div class="row text-center mt-5 pt-3">
+  <div class="row text-center mt-5 pt-5">
       <div class="col-md-4" data-aos="zoom-in">
           <h3>~59 Mins</h3>
           <p class="text-muted">Total Duration</p>
@@ -85,7 +92,39 @@
   </div>
 </section>
 
-<section id="applications" class="bg-light py-5">
+<section id="visualizations" class="bg-light py-5">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-up">Visualizations</h2>
+    <div class="row text-center">
+      
+      <div class="col-lg-4" data-aos="fade-up">
+        <h5 class="mb-3">Clear Weather (Camera)</h5>
+        <video class="preview-visual" autoplay loop muted playsinline>
+          <source src="assets/Cleary.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="150">
+        <h5 class="mb-3">Rainy Weather (Camera)</h5>
+        <video class="preview-visual" autoplay loop muted playsinline>
+          <source src="assets/Rainy.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="150">
+        <h5 class="mb-3">Clear Weather (LiDAR)</h5>
+        <video class="preview-visual" autoplay loop muted playsinline>
+          <source src="assets/Lidary.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+    </div>
+  </div>
+</section>
+<section id="applications" class="py-5">
   <div class="container">
     <h2 class="section-title" data-aos="fade-up">Research Applications</h2>
     <div class="row">
